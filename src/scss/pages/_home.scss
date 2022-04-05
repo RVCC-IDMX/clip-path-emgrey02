@@ -1,2 +1,72 @@
 /* home */
 @use "../base/typography" as type;
+
+.container {
+    max-width: min(90%, 400px);
+    height: max-content;
+    background: white;
+    border-radius: 10px;
+
+    .inner {
+        background: #5d5185;
+        border-radius: 10px;
+        width: 100%;
+        clip-path: inset(0% 0% 75% 75%);
+        // clip-path: circle(30% at 105% 0%);
+        transition: all 500ms ease-in-out;
+        cursor: pointer;
+        padding-block: 2em 5em;
+        padding-inline: 2em;
+
+        display: grid;
+        grid-template-rows: .5fr 2fr 3fr;
+        gap: 2em;
+
+        &:hover {
+            clip-path: inset(0% 0% 0% 0%);
+            background-color: rgb(151, 218, 149);
+
+            span {
+                color: rgba(255, 255, 255, 0);
+                // background-color: rgba(125, 104, 161, 0);
+                background-color: rgb(151, 218, 149);
+            }
+
+            h1, p {
+                color: black;
+            }
+        }
+
+        span {
+            width: min-content;
+            margin-inline-start: auto;
+            color: white;
+            font-weight: bold;
+            transition: color .5s;
+            position: relative;
+            background-color: rgb(125, 104, 161);
+            border-radius: .3rem;
+            padding-block: .3em;
+            padding-inline: 1em;
+        }
+
+        h1 {
+            font-size: 2rem;
+            color: white;
+            margin: 0;
+        }
+
+        p {
+            color: white;
+            font-size: 1rem;
+            margin: 0;
+        }
+
+        h1, p, span {
+            transition: color 500ms ease-in-out, background-color 500ms ease-in-out;
+        }
+
+
+    }
+
+}
